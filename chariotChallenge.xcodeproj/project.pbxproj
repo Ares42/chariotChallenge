@@ -412,6 +412,7 @@
 				D5B9EF9E1A819B36008A6BF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5B9EF9F1A819B36008A6BF6 /* Build configuration list for PBXNativeTarget "chariotChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				D5B9EFA11A819B36008A6BF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
