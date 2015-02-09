@@ -8,12 +8,15 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
+
 - (IBAction)buttonLogIn:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldEmail;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
 
 @end
+
 
 @implementation ViewController
 
@@ -28,23 +31,103 @@
 }
 
 - (IBAction)buttonLogIn:(UIButton *)sender {
-    NSString *post = [NSString stringWithFormat: @"&Username=%@ &Password=%@", @"username", @"password"];
+    
+    NSLog(@"Email = %@", self.textFieldEmail.text);
+    NSLog(@"Password = %@", self.textFieldPassword.text);
+    
+    [self serverLoginTest];
+    
+    
+    
+}
+
+-(void)serverLoginTest {
+    /*
+    NSString *post = [NSString stringWithFormat: @"&Username=%@, &Password=%@", @"username", @"password"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.abcde.com/xyz/login.aspx"]]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.chariotnow.com/1/auth/sign_in"]]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Current-Type"];
     [request setHTTPBody:postData];
-     NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-     if (conn){
-         NSLog(@"Connection Successful");
-     } else {
-         NSLog(@"Connection Failed");
-     }
+    NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    if (conn){
+        NSLog(@"Connection Successful");
+    } else {
+        NSLog(@"Connection Failed");
+    }
+    */
+    
+    NSString *fixedURL = [NSString stringWithFormat:@"https://api.chariotnow.com/1/auth/sign_in"];
+    NSURL *url = [NSURL URLWithString:fixedURL];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    request.HTTPMethod = @"POST";
+    
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    
+    [dictionary setValue:self.textFieldEmail.text forKey:@"email"];
+    [dictionary setValue:self.textFieldPassword.text forKey:@"password"];
+    
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
+    [request setHTTPBody:data];
+    if (!error) {
+        NSURLSessionDataTask *uploadTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+            NSInteger responseStatusCode = [httpResponse statusCode];
+            if (responseStatusCode == 200 && data) {
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    NSDictionary *fetchedData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    NSLog(@"it works!");
+                });
+            } else {
+                NSLog(@"Sending to individuals failed");
+            }
+        }];
+        [uploadTask resume];
+        NSLog(@"Connected to server");
+    } else {
+        NSLog(@"Cannot connect to server");
+    }
+    
 }
 
+-(void)serverGetRequest {
+    
+    NSString *fixedUrl = [NSString stringWithFormat:@"http://www.omdbapi.com/?t=avengers&y=&plot=short&r=json"];
+    NSURL *url = [NSURL URLWithString:fixedUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+    [request setHTTPMethod:@"GET"];
+    NSURLSession *urlSession = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        
+        NSInteger responseStatusCode = [httpResponse statusCode];
+        
+        if (responseStatusCode == 200 && data) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                
+                NSDictionary *fetchedData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSLog(@"%@", fetchedData);
+            });
+            
+        } else {
+            
+            NSLog(@"cannot connect to server");
+            
+        }
+    }];
+    [dataTask resume];
+}
 
 
 @end

@@ -64,7 +64,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="buttonLogIn:" destination="vXZ-lx-hvc" eventType="touchDown" id="diS-Oj-iSs"/>
-                                                        <segue destination="SU8-1g-QRS" kind="show" id="xVF-lP-Fte"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -78,28 +77,42 @@
                                                 <constraint firstAttribute="width" constant="218" id="u66-Fc-kmp"/>
                                             </constraints>
                                         </view>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="  Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oiq-sE-8eq">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oiq-sE-8eq">
                                             <rect key="frame" x="30" y="200" width="540" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="rep-Zg-BTX"/>
                                             </constraints>
-                                            <attributedString key="attributedText"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Solobando663@gmail.com">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="  Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fLK-cb-h5F">
-                                            <rect key="frame" x="30" y="260" width="539" height="40"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="  Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fLK-cb-h5F">
+                                            <rect key="frame" x="30" y="260" width="540" height="40"/>
                                             <color key="backgroundColor" red="0.98469883879999998" green="1" blue="0.97522363489999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="w2u-a5-C2f"/>
                                             </constraints>
-                                            <attributedString key="attributedText"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="foobar">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="smallSystem"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         </textField>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oiq-sE-8eq" firstAttribute="leading" secondItem="5CM-Oz-iJp" secondAttribute="leading" constant="30" id="4uK-BL-nTa"/>
-                                        <constraint firstItem="oiq-sE-8eq" firstAttribute="centerX" secondItem="fLK-cb-h5F" secondAttribute="centerX" constant="0.5" id="ADm-OS-di7"/>
+                                        <constraint firstItem="oiq-sE-8eq" firstAttribute="centerX" secondItem="fLK-cb-h5F" secondAttribute="centerX" id="ADm-OS-di7"/>
                                         <constraint firstItem="S1w-fy-Dl7" firstAttribute="top" secondItem="fLK-cb-h5F" secondAttribute="bottom" constant="100" id="B0T-eI-R3z"/>
                                         <constraint firstItem="S1w-fy-Dl7" firstAttribute="leading" secondItem="5CM-Oz-iJp" secondAttribute="leading" constant="191" id="Qag-xE-EbJ"/>
                                         <constraint firstItem="fLK-cb-h5F" firstAttribute="leading" secondItem="5CM-Oz-iJp" secondAttribute="leading" constant="30" id="UPm-HL-Jeo"/>
@@ -114,6 +127,7 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="ADm-OS-di7"/>
                                             <exclude reference="Qag-xE-EbJ"/>
                                             <exclude reference="agO-Y0-5cp"/>
                                             <exclude reference="vwD-8K-KDF"/>
@@ -178,7 +192,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="   Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAy-c9-KH3">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="   Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAy-c9-KH3">
                                             <rect key="frame" x="8" y="224" width="417" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -187,7 +201,7 @@
                                             <attributedString key="attributedText"/>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="   Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Md-da-3Vr">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="   Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Md-da-3Vr">
                                             <rect key="frame" x="432" y="224" width="160" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -197,7 +211,7 @@
                                             <attributedString key="attributedText"/>
                                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="  First" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-eF-lmx">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="  First" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-eF-lmx">
                                             <rect key="frame" x="8" y="176" width="288" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -206,7 +220,7 @@
                                             <attributedString key="attributedText"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="   Last" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mCz-I3-EYd">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="   Last" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mCz-I3-EYd">
                                             <rect key="frame" x="304" y="176" width="288" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -214,21 +228,6 @@
                                             </constraints>
                                             <attributedString key="attributedText"/>
                                             <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Current Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPG-dW-0bO">
-                                            <rect key="frame" x="7" y="342" width="584" height="30"/>
-                                            <color key="backgroundColor" red="0.98469883879999998" green="1" blue="0.97522363489999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="H7a-QG-myV"/>
-                                                <constraint firstAttribute="height" constant="30" id="Kv1-LB-5bi"/>
-                                            </constraints>
-                                            <attributedString key="attributedText"/>
-                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="H7a-QG-myV"/>
-                                                </mask>
-                                            </variation>
                                         </textField>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="3vx-y7-sMQ">
                                             <rect key="frame" x="8" y="8" width="160" height="160"/>
@@ -238,10 +237,10 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ix-Tj-ebq">
-                                            <rect key="frame" x="200" y="425" width="200" height="103"/>
+                                            <rect key="frame" x="200" y="387" width="200" height="100"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v2m-Rr-th8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="103"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                                     <state key="normal">
                                                         <attributedString key="attributedTitle">
                                                             <fragment content="Update">
@@ -260,17 +259,25 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.55206360480000005" blue="0.015516370410000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="2Wd-li-FCU"/>
                                                 <constraint firstItem="v2m-Rr-th8" firstAttribute="top" secondItem="3ix-Tj-ebq" secondAttribute="top" id="FaI-1p-8eB"/>
                                                 <constraint firstItem="v2m-Rr-th8" firstAttribute="centerX" secondItem="3ix-Tj-ebq" secondAttribute="centerX" id="TpG-DF-q5S"/>
+                                                <constraint firstAttribute="trailing" secondItem="v2m-Rr-th8" secondAttribute="trailing" id="f4z-pZ-4Db"/>
                                                 <constraint firstAttribute="bottom" secondItem="v2m-Rr-th8" secondAttribute="bottom" id="kSB-Fm-bMe"/>
+                                                <constraint firstAttribute="width" constant="200" id="pU8-Sr-pSn"/>
                                                 <constraint firstItem="v2m-Rr-th8" firstAttribute="leading" secondItem="3ix-Tj-ebq" secondAttribute="leading" id="rge-zi-lA7"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="TpG-DF-q5S"/>
+                                                </mask>
+                                            </variation>
                                         </view>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egA-Ux-H1z">
-                                            <rect key="frame" x="9" y="380" width="584" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egA-Ux-H1z">
+                                            <rect key="frame" x="9" y="332" width="584" height="40"/>
                                             <color key="backgroundColor" red="0.98469883879999998" green="1" blue="0.97522363489999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="NVB-ks-N9V"/>
+                                                <constraint firstAttribute="height" constant="40" id="NVB-ks-N9V"/>
                                                 <constraint firstAttribute="height" constant="30" id="l44-fd-Uuj"/>
                                             </constraints>
                                             <attributedString key="attributedText"/>
@@ -278,6 +285,21 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="l44-fd-Uuj"/>
+                                                </mask>
+                                            </variation>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Current Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPG-dW-0bO">
+                                            <rect key="frame" x="7" y="284" width="584" height="40"/>
+                                            <color key="backgroundColor" red="0.98469883879999998" green="1" blue="0.97522363489999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="H7a-QG-myV"/>
+                                                <constraint firstAttribute="height" constant="40" id="Kv1-LB-5bi"/>
+                                            </constraints>
+                                            <attributedString key="attributedText"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="H7a-QG-myV"/>
                                                 </mask>
                                             </variation>
                                         </textField>
@@ -306,7 +328,7 @@
                                         <constraint firstItem="9Md-da-3Vr" firstAttribute="top" secondItem="OAy-c9-KH3" secondAttribute="bottom" constant="56" id="LYq-rn-UZK"/>
                                         <constraint firstAttribute="trailing" secondItem="mCz-I3-EYd" secondAttribute="trailing" constant="8" id="MbU-fR-ZHh"/>
                                         <constraint firstItem="9Md-da-3Vr" firstAttribute="leading" secondItem="3vx-y7-sMQ" secondAttribute="trailing" constant="8" id="Mtx-2J-FaF"/>
-                                        <constraint firstItem="TPG-dW-0bO" firstAttribute="top" secondItem="9Md-da-3Vr" secondAttribute="bottom" constant="78" id="OqF-bK-5iY"/>
+                                        <constraint firstItem="TPG-dW-0bO" firstAttribute="top" secondItem="9Md-da-3Vr" secondAttribute="bottom" constant="20" id="OqF-bK-5iY"/>
                                         <constraint firstItem="9Md-da-3Vr" firstAttribute="leading" secondItem="OAy-c9-KH3" secondAttribute="trailing" constant="7" id="P50-Fx-Tb4"/>
                                         <constraint firstItem="egA-Ux-H1z" firstAttribute="top" secondItem="TPG-dW-0bO" secondAttribute="bottom" constant="8" symbolic="YES" id="RT8-Jn-gwc"/>
                                         <constraint firstItem="3ix-Tj-ebq" firstAttribute="top" secondItem="egA-Ux-H1z" secondAttribute="bottom" constant="15" id="STW-zG-fkH"/>
@@ -382,13 +404,15 @@
                                             <exclude reference="Cc7-rx-JZX"/>
                                             <exclude reference="Yh2-oF-qgn"/>
                                             <exclude reference="eSQ-OG-uLu"/>
+                                            <exclude reference="Wb7-8Q-nS9"/>
+                                            <exclude reference="bQE-kD-IoA"/>
+                                            <exclude reference="n9z-hh-YBz"/>
+                                            <exclude reference="oFX-8j-oqC"/>
                                             <exclude reference="LYq-rn-UZK"/>
                                             <exclude reference="Mtx-2J-FaF"/>
                                             <exclude reference="Vyu-Kh-sm6"/>
                                             <exclude reference="cQf-Iu-PbS"/>
                                             <exclude reference="gm4-OJ-UhD"/>
-                                            <exclude reference="bQE-kD-IoA"/>
-                                            <exclude reference="oFX-8j-oqC"/>
                                         </mask>
                                     </variation>
                                 </view>
